@@ -1,0 +1,15 @@
+{% load static %}
+
+<html>
+<head>
+    <link rel="stylesheet" href="{% static 'css/folder/main.css' %}">
+</head>
+<body>
+<p class='example'>base.html</p>
+
+{% block content %}{% endblock %}
+
+{% comment %} <script src="{% static 'css/main.js' %}"></script> {% endcomment %}
+<script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>

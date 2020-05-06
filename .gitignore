@@ -1,0 +1,7 @@
+.venv
+.vscode
+node_modules
+**/**/*.pyc
+*.pyc
+*/local_*
+/static/

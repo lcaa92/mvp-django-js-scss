@@ -1,0 +1,28 @@
+{
+  "name": "mvp",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "scss": "./node_modules/webpack/bin/webpack.js --config scss.config.js --optimize-minimize",
+    "scss-watch": "./node_modules/webpack/bin/webpack.js  -w -d --progress --config scss.config.js",
+    "es6": "./node_modules/webpack/bin/webpack.js --optimize-minimize",
+    "es6-watch": "./node_modules/webpack/bin/webpack.js -w -d --progress"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "css-loader": "^3.5.3",
+    "mini-css-extract-plugin": "^0.9.0",
+    "style-loader": "^1.2.1",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11"
+  },
+  "dependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "sass": "^1.26.5",
+    "sass-loader": "^8.0.2"
+  }
+}
