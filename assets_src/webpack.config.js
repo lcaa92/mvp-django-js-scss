@@ -6,7 +6,7 @@ module.exports = {
   },
   output: {
     filename: '[name].js',
-    path: path.resolve(__dirname, './core/static/js')
+    path: path.resolve(__dirname, '../core/static/js')
   },
   module: {
     rules: [

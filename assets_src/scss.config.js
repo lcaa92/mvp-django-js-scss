@@ -8,7 +8,7 @@ module.exports = {
   },
   output: {
     // filename: '[name].js',
-    path: path.resolve(__dirname, './core/static/css')
+    path: path.resolve(__dirname, '../core/static/css')
   },
   plugins: [
     new MiniCssExtractPlugin({
@@ -27,7 +27,7 @@ module.exports = {
             loader: MiniCssExtractPlugin.loader,
             options: {
               // publicPath: '/public/path/to/',
-              publicPath: path.resolve(__dirname, './core/static/css')
+              publicPath: path.resolve(__dirname, '../core/static/css')
             }
           },
           // Creates `style` nodes from JS strings

@@ -4,10 +4,10 @@
   "description": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "scss": "./node_modules/webpack/bin/webpack.js --config scss.config.js --optimize-minimize",
-    "scss-watch": "./node_modules/webpack/bin/webpack.js  -w -d --progress --config scss.config.js",
-    "es6": "./node_modules/webpack/bin/webpack.js --optimize-minimize",
-    "es6-watch": "./node_modules/webpack/bin/webpack.js -w -d --progress"
+    "scss": "./node_modules/webpack/bin/webpack.js --config assets_src/scss.config.js --optimize-minimize",
+    "scss-watch": "./node_modules/webpack/bin/webpack.js  -w -d --progress --config assets_src/scss.config.js",
+    "es6": "./node_modules/webpack/bin/webpack.js --optimize-minimize --config assets_src/webpack.config.js",
+    "es6-watch": "./node_modules/webpack/bin/webpack.js -w -d --progress --config assets_src/webpack.config.js"
   },
   "keywords": [],
   "author": "",
