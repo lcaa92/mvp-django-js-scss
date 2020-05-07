@@ -18,7 +18,7 @@
 
   <link rel="stylesheet" href="{% static 'css/main.css' %}">
 </head>
-<body class="hold-transition login-page">
+<body class="hold-transition {% if login_page %} login-page {% else %} sidebar-mini {% endif %}">
     {% block content %}{% endblock %}
 
     <script src="{% static 'js/main.js' %}"></script>

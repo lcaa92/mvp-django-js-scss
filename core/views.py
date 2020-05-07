@@ -6,7 +6,7 @@ from django.contrib.auth import authenticate, login
 # Create your views here.
 def login_view(request):
     if request.method != 'POST':
-        return render(request, 'login.html', {'form': SingninForm()})
+        return render(request, 'login.html', {'form': SingninForm(), 'login_page': True})
 
     form = SingninForm(request.POST)
     if not form.is_valid():
@@ -17,7 +17,7 @@ def login_view(request):
 
     user = authenticate(username=username, password=password)
     if not user or not user.is_active:
-        return render(request, 'login.html', {'form': form, 'login_error': True})
+        return render(request, 'login.html', {'form': form, 'login_page': True, 'login_error': True})
 
     login(request, user)
     return redirect('dashboard_index')
