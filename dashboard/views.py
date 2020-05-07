@@ -1,6 +1,6 @@
-from django.shortcuts import HttpResponse
+from django.shortcuts import render
 
 
 # Create your views here.
 def index(request):
-    return HttpResponse('teste')
+    return render(request, 'dashboard/home.html')
