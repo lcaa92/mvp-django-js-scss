@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content_base %}
+<div class="wrapper">
+   {% include 'dashboard/navbar.html' %}
+
+  <!-- Main Sidebar Container -->
+  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <a href="{% url 'dashboard_index' %}" class="brand-link text-logo">
+      {% comment %} <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+           style="opacity: .8"> {% endcomment %}
+      <span class="brand-text font-weight-light">AdminLTE 3</span>
+    </a>
+
+    {% include 'dashboard/sidebar.html' %}
+  </aside>
+  {% block content %}{% endblock %}
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+  <!-- /.control-sidebar -->
+
+  <!-- Main Footer -->
+  <footer class="main-footer">
+    <strong>Copyright &copy; 2014-2019 <a href="http://adminlte.io">AdminLTE.io</a>.</strong>
+    All rights reserved.
+    <div class="float-right d-none d-sm-inline-block">
+      <b>Version</b> 3.0.4
+    </div>
+  </footer>
+</div>
+<!-- ./wrapper -->
+{% endblock %}
