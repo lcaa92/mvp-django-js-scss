@@ -3,6 +3,7 @@ const path = require('path');
 module.exports = {
   entry: {
     'main': './assets_src/js/main.js',
+    'users': './assets_src/js/users.js',
   },
   output: {
     filename: '[name].js',
@@ -17,6 +18,10 @@ module.exports = {
           loader: 'babel-loader',
         }
       },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader']
+      }
     ],
   },
   devtool: 'source-map',

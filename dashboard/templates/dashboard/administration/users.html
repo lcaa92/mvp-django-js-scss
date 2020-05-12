@@ -1,4 +1,5 @@
 {% extends 'dashboard/base.html' %}
+{% load static %}
 
 {% block content %}
 <!-- Content Wrapper. Contains page content -->
@@ -8,7 +9,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Usuários</h1>
+            <h1 class="m-0 text-dark">Administração de Usuários</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -29,11 +30,11 @@
 
           <div class="card">
             <div class="card-header">
-              <h3 class="card-title">DataTable with default features</h3>
+              <h3 class="card-title">Listagem</h3>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
-              <table id="example1" class="table table-bordered table-striped">
+              <table id="tableUsers" class="table table-bordered table-striped">
                 <thead>
                 <tr>
                   <th>Rendering engine</th>
@@ -475,18 +476,10 @@
   </div>
   <!-- /.content-wrapper -->
 
-<script>
-  $(function () {
-    $('#example2').DataTable({
-      "paging": true,
-      "lengthChange": false,
-      "searching": false,
-      "ordering": true,
-      "info": true,
-      "autoWidth": false,
-      "responsive": true,
-    });
-  });
-</script>
 
+
+{% endblock %}
+
+{% block after_js %}
+<script src="{% static 'js/users.js' %}"></script>
 {% endblock %}
