@@ -4,7 +4,6 @@ from django.http import HttpResponseRedirect
 
 # Create your views here.
 def users(request):
-    print('users')
     return render(request, 'dashboard/administration/users.html')
 
 
