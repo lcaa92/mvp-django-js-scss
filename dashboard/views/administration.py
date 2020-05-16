@@ -13,5 +13,9 @@ def users(request):
 
 
 def groups(request):
-    print('groups')
-    return HttpResponseRedirect(reverse('dashboard_index'))
+    ctx = {
+        'ctx_js': {
+            'data_url': reverse('data_dashboard_administration_groups')
+        }
+    }
+    return render(request, 'dashboard/administration/groups.html', ctx)

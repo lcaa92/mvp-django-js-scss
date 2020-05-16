@@ -1,6 +1,6 @@
 import json
 from django.shortcuts import HttpResponse
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User, Group
 
 
 # Create your views here.
@@ -20,8 +20,16 @@ def users(request):
 
 
 def groups(request):
+    groups = Group.objects.all()
+
+    dataGroups = [{
+        'id': group.id,
+        'name': group.name,
+        'count_users': group.user_set.count(),
+    } for group in groups]
+
     data = {
-        'msg': 'Sucesso!'
+        "data": dataGroups
     }
     return HttpResponse(json.dumps(data), content_type='application/json')
 

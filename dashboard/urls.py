@@ -9,7 +9,7 @@ urlpatterns = [
     path('data/', include([
         path('administration/', include([
             path('users', login_required(data.users), name='data_dashboard_administration_users'),
-            path('groups', login_required(data.groups), name='ddata_ashboard_administration_groups'),
+            path('groups', login_required(data.groups), name='data_dashboard_administration_groups'),
         ]))
     ])),
     path('financial/', include([

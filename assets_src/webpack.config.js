@@ -4,6 +4,7 @@ module.exports = {
   entry: {
     'main': './assets_src/js/main.js',
     'users': './assets_src/js/users.js',
+    'groups': './assets_src/js/groups.js',
   },
   output: {
     filename: '[name].js',
