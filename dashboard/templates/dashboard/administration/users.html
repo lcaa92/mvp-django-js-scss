@@ -64,5 +64,9 @@
 {% endblock %}
 
 {% block after_js %}
+<script>
+  var ctx = {{ ctx_js|safe }}
+</script>
+
 <script src="{% static 'js/users.js' %}"></script>
 {% endblock %}
