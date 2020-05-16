@@ -13,6 +13,7 @@ urlpatterns = [
         ]))
     ])),
     path('financial/', include([
+        path('panel', login_required(financial.panel), name='dashboard_financial_panel'),
         path('shares', login_required(financial.shares), name='dashboard_financial_shares'),
     ])),
     path('administration/', include([

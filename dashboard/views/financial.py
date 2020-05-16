@@ -1,8 +1,16 @@
-from django.shortcuts import reverse
-from django.http import HttpResponseRedirect
+from django.shortcuts import reverse, render
 
 
 # Create your views here.
+def panel(request):
+    ctx = {}
+    return render(request, 'dashboard/financial/panel.html', ctx)
+
+
 def shares(request):
-    print('shares')
-    return HttpResponseRedirect(reverse('dashboard_index'))
+    ctx = {
+        'ctx_js': {
+            'data_url': reverse('data_dashboard_administration_groups')
+        }
+    }
+    return render(request, 'dashboard/financial/shares.html', ctx)
