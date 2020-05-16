@@ -10,7 +10,7 @@ def panel(request):
 def shares(request):
     ctx = {
         'ctx_js': {
-            'data_url': reverse('data_dashboard_administration_groups')
+            'data_url': reverse('data_dashboard_financial_users')
         }
     }
     return render(request, 'dashboard/financial/shares.html', ctx)

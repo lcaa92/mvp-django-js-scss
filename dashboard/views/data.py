@@ -1,6 +1,7 @@
 import json
 from django.shortcuts import HttpResponse
 from django.contrib.auth.models import User, Group
+from financial.models import Shares
 
 
 # Create your views here.
@@ -34,8 +35,17 @@ def groups(request):
     return HttpResponse(json.dumps(data), content_type='application/json')
 
 
-def shares(request):
+def my_shares(request):
+    shares_ds =Shares.objects.filter(
+        users__user=request.user
+    )
+    shares = [{
+        'code': share.code,
+        'company': share.company,
+        'price': float(share.price) or None,
+    } for share in shares_ds]
+
     data = {
-        'msg': 'Sucesso!'
+        "data": shares
     }
     return HttpResponse(json.dumps(data), content_type='application/json')
