@@ -4,6 +4,10 @@ from django.contrib.auth import authenticate, login
 
 
 # Create your views here.
+def homepage(request):
+    return redirect('dashboard_index')
+
+
 def login_view(request):
     if request.method != 'POST':
         return render(request, 'login.html', {'form': SingninForm(), 'login_page': True})
