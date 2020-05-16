@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 
     'core.apps.CoreConfig',
     'dashboard.apps.DashboardConfig',
+    'financial.apps.FinancialConfig',
 ]
 
 MIDDLEWARE = [
