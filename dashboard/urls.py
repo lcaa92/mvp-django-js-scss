@@ -8,8 +8,8 @@ urlpatterns = [
     path('', login_required(views.index), name='dashboard_index'),
     path('data/', include([
         path('administration/', include([
-            path('users', login_required(data.users), name='dashboard_administration_users'),
-            path('groups', login_required(data.groups), name='dashboard_administration_groups'),
+            path('users', login_required(data.users), name='data_dashboard_administration_users'),
+            path('groups', login_required(data.groups), name='ddata_ashboard_administration_groups'),
         ]))
     ])),
     path('financial/', include([
