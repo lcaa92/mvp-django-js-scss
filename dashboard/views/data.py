@@ -36,7 +36,7 @@ def groups(request):
 
 
 def my_shares(request):
-    shares_ds =Shares.objects.filter(
+    shares_ds = Shares.objects.filter(
         users__user=request.user
     )
     shares = [{

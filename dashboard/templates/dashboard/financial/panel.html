@@ -9,13 +9,13 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Administração de Usuários</h1>
+            <h1 class="m-0 text-dark">Painel de ações</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item"><a href="#">Administração</a></li>
-              <li class="breadcrumb-item active">Usuários</li>
+              <li class="breadcrumb-item"><a href="#">Financeiro</a></li>
+              <li class="breadcrumb-item active">Painel</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -34,12 +34,12 @@
             </div>
             <!-- /.card-header -->
             <div class="card-body">
-              <table id="tableUsers" class="table table-bordered table-striped">
+              <table id="tableShares" class="table table-bordered table-striped">
                 <thead>
                 <tr>
                   <th>Código</th>
-                  <th>Name</th>
-                  <th>Qtd Users</th>
+                  <th>Empresa</th>
+                  <th>Valor atual</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -67,5 +67,5 @@
   var ctx = {{ ctx_js|safe }}
 </script>
 
-<script src="{% static 'js/groups.js' %}"></script>
+<script src="{% static 'js/shares.js' %}"></script>
 {% endblock %}
