@@ -13,5 +13,5 @@ class Shares(models.Model):
 
 
 class UserShares(models.Model):
-    user = models.ForeignKey(User, on_delete=models.PROTECT, related_name='my_shares')
+    user = models.ForeignKey(User, on_delete=models.PROTECT, related_name='shares')
     share = models.ForeignKey(Shares, on_delete=models.PROTECT, related_name='users')
