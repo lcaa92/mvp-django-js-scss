@@ -15,8 +15,13 @@ def panel(request):
 def shares(request):
     ctx = {
         'ctx_js': {
-            'table_id': 'tableShares',
-            'data_url': reverse('data_dashboard_financial_users')
+            'datatable': {
+                'table_shares': {
+                    'data_url': reverse('data_dashboard_financial_users'),
+                    'columnsTitle': ['Código', 'Empresa', 'Valor Atual'],
+                    'columnsValue': ['code', 'company', 'price'],
+                },
+            }
         }
     }
     return render(request, 'dashboard/financial/shares.html', ctx)
