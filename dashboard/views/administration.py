@@ -5,6 +5,7 @@ from django.shortcuts import reverse, render
 def users(request):
     ctx = {
         'ctx_js': {
+            'table_id': 'tableUsers',
             'data_url': reverse('data_dashboard_administration_users')
         }
     }
@@ -14,6 +15,7 @@ def users(request):
 def groups(request):
     ctx = {
         'ctx_js': {
+            'table_id': 'tableGroups',
             'data_url': reverse('data_dashboard_administration_groups')
         }
     }

@@ -5,6 +5,7 @@ from django.shortcuts import reverse, render
 def panel(request):
     ctx = {
         'ctx_js': {
+            'table_id': 'tablePanel',
             'data_url': reverse('data_dashboard_financial_users')
         }
     }
@@ -14,6 +15,7 @@ def panel(request):
 def shares(request):
     ctx = {
         'ctx_js': {
+            'table_id': 'tableShares',
             'data_url': reverse('data_dashboard_financial_users')
         }
     }
