@@ -25,14 +25,13 @@ jobs:
           python-version: 3.7
 
       # Install dependencies
-      - name: Install dependencies
+      - name: Install dependencies pip and flake 8
         run: |
           python -m pip install --upgrade pip
+          pip install flake8
 
       # Exec flake8
-      - name: Lint flake8
+      - name: Run flake8
         run: |
-          pip install flake8
-          echo test, and deploy your project.
           # stop the build if there are Python syntax errors or undefined names
           git diff HEAD^ HEAD | flake8 --diff  --count  --show-source --statistics --config=./.flake8
