@@ -1,0 +1,36 @@
+# This workflow validate commit with flake8 config
+name: Flake8 validation
+
+on:
+    push:
+      branches:
+        - develop
+        - master
+        - release*
+    pull_request:
+      branches:
+      - develop
+      - master
+      - release*
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v1
+
+            - name: Set up Python 3.7
+            uses: actions/setup-python@v1
+            with:
+                python-version: 3.7
+
+            - name: Install dependencies
+            run: |
+                python -m pip install --upgrade pip
+                pip install -r requirements.txt
+
+            - name: Lint with flake8
+            run: |
+                pip install flake8
+                # stop the build if there are Python syntax errors or undefined names
+                flake8 . --count  --show-source --statistics --config=.github/workflows/flake8/.flake8
