@@ -20,20 +20,28 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v1
+      - name: Set up Python 3.7
+        uses: actions/setup-python@v1
         with:
-          python-version: 3.7 
+          python-version: 3.7
 
       # Install dependencies
-      - name: Install dependencies
+      - name: Install dependencies pip and flake 8
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt
-          
-      # Exec flake8
-      - name: Lint flake8
-        run: |
           pip install flake8
-          echo test, and deploy your project.
+
+      #  Show git diff
+      - name: Git diff
+        run: git diff $GITHUB_SHA
+
+      # Show pip packages
+      - name: Show pip packages
+        run: pip list --format=columns
+
+      # Exec flake8
+      - name: Run flake8
+        run: |
           # stop the build if there are Python syntax errors or undefined names
-          git diff HEAD^ HEAD | flake8 --diff  --count  --show-source --statistics --config=.github/workflows/flake8/.flake8
+          git diff $GITHUB_SHA | flake8 --diff  --count  --show-source --statistics --config=./.flake8
