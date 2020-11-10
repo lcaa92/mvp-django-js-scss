@@ -44,4 +44,4 @@ jobs:
       - name: Run flake8
         run: |
           # stop the build if there are Python syntax errors or undefined names
-          git diff "$GITHUB_SHA" | flake8 --diff  --count  --show-source --statistics --config=./.flake8
+          git diff ${{ github.sha }} | flake8 --diff  --count  --show-source --statistics --config=./.flake8
