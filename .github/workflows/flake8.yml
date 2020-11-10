@@ -36,4 +36,4 @@ jobs:
       - name: Run flake8
         run: |
           # stop the build if there are Python syntax errors or undefined names
-          flake8 . --count --exit-zero --statistics --config=.flake8
+          flake8 . --count --show-source --statistics --config=.flake8
