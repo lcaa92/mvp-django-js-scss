@@ -34,7 +34,7 @@ jobs:
 
       #  Show git diff
       - name: Git diff
-        run: git diff "$GITHUB_SHA"
+        run: git diff ${{ GITHUB_SHA }}
 
       # Show pip packages
       - name: Show pip packages
