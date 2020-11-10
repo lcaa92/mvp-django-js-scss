@@ -22,7 +22,7 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v1
       - name: Set up Python 3.7
-        uses: actions/setup-python@v1
+        uses: actions/setup-python@v2
         with:
           python-version: 3.7
 
@@ -32,16 +32,8 @@ jobs:
           python -m pip install --upgrade pip
           pip install flake8
 
-      #  Show git diff
-      - name: Git diff
-        run: git diff $GITHUB_SHA
-
-      # Show pip packages
-      - name: Show pip packages
-        run: pip list --format=columns
-
       # Exec flake8
       - name: Run flake8
         run: |
           # stop the build if there are Python syntax errors or undefined names
-          git diff $GITHUB_SHA | flake8 --diff  --count  --show-source --statistics --config=./.flake8
+          flake8 . --count --show-source --statistics --config=.flake8
